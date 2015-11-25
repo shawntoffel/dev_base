@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "../bases/debian_rvm.box"
+  config.vm.box = "debian/jessie64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -81,7 +81,8 @@ Vagrant.configure(2) do |config|
 #  config.vm.provision "shell", inline: <<-SHELL
 #		puppet module install maestrodev-rvm --modulepath /vagrant/puppet/modules
 #  SHELL
-
+	config.vm.provision :shell, inline: "apt-get update && apt-get install -y puppet"
+	
 	config.vm.provision :puppet do |puppet|
 		puppet.manifests_path = "puppet/manifests"
 		puppet.manifest_file = "packages.pp"
