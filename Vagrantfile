@@ -78,6 +78,6 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
 
-	config.vm.provision :shell, :path => "shell/packages.sh", privileged: true
-	config.vm.provision :shell, :path => "shell/dotfiles.sh", privileged: false
+  config.vm.provision :shell, :path => "shell/packages.sh", privileged: true
+  config.vm.provision :shell, :path => "shell/dotfiles.sh", privileged: false
 end
