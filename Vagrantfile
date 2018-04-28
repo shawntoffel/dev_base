@@ -80,5 +80,4 @@ Vagrant.configure("2") do |config|
 
 	config.vm.provision :shell, :path => "shell/packages.sh", privileged: true
 	config.vm.provision :shell, :path => "shell/dotfiles.sh", privileged: false
-	config.vm.provision :shell, :path => "shell/ssh.sh", privileged: false
 end
